@@ -34,6 +34,16 @@ export const Home = ({ valutes }) => {
 
   return (
     <div className="bg-pink lg:pb-36 pb-14">
+
+        {
+            brandToShow && (
+                <ModalPage 
+                    open={!!brandToShow} 
+                    onClose={() => setBrandToShow(null)} 
+                    brand={brandToShow}  
+                />
+            )
+        }
       
         <div className={`bg-black py-12 flex flex-col items-center  w-full top-0 left-0 ${showBanner ? 'opacity-100 z-20': 'opacity-0 -z-50 absolute'} transition-opacity duration-300`}>
             <span className="text-pink lg:text-base text-sm lg:max-w-[540px] max-w-[320px] lg:mb-9 mb-8 text-center font-normal font-NotoSans leading-6">
@@ -144,11 +154,7 @@ export const Home = ({ valutes }) => {
                 ))}
             </div>
 
-            <ModalPage 
-                open={!!brandToShow} 
-                onClose={() => setBrandToShow(null)} 
-                brand={brandToShow}  
-            />
+
 
             <div className="lg:flex lg:items-center py-20 lg:px-20 px-5 border border-gray-light bg-[#E4D9CF30] rounded-2xl lg:mb-9 mb-3 ">
                 <div className="lg:mr-32 lg:flex lg:items-center flex justify-center mb-3">
@@ -200,13 +206,6 @@ export const Home = ({ valutes }) => {
                     </div>
                 ))}
             </div>
-
-            <ModalPage 
-            open={!!brandToShow} 
-            onClose={() => setBrandToShow(null)} 
-            brand={brandToShow}  
-            />
-
         </div>
     </div>
   );
