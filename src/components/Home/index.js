@@ -131,22 +131,24 @@ export const Home = ({ valutes }) => {
                 </div>
             </div>
 
-            <div className="flex lg:mb-9 mb-3 lg:gap-9 gap-3 lg:justify-between justify-center flex-wrap ">
+            <div className="flex lg:mb-9 mb-3 lg:gap-9 sm:gap-3 gap-1 justify-between flex-wrap lg:grid-rows-3 grid-rows-2">
                 {brandData.map((brand, i) => (
                     <div
                         onClick={() => handleBrandCardClick(brand)}
                         key={`brand-item-${i}`}
-                        className="lg:px-4 lg:py-6 px-2 py-3 flex flex-col justify-between items-center border border-gray-light rounded-2xl lg:max-w-[348px] lg:gap-20 gap-10 max-w-[154px] cursor-pointer"
+                        className="lg:px-4 lg:py-6 px-1 py-3 lg:mb-0 sm:mb-0 mb-3 flex flex-col justify-between items-center border border-gray-light rounded-2xl lg:gap-20 gap-10 xs:w-auto w-full lg:h-auto h-[250px] cursor-pointer hover:bg-gray-light"
                     >
-                        <span className="text-gray lg:text-base text-sm  text-center font-normal lg:w-[320px] w-[154px] font-NotoSans leading-6 ">
+                        <span className="text-gray lg:text-base text-sm text-center font-normal lg:w-[320px] w-[154px] font-NotoSans leading-6 ">
                             {brand.name}
                         </span>
-                        <Image
-                            src={`${brand.imgUrl?.src}`}
-                            width={brand.imgUrl.width}
-                            height={brand.imgUrl.height}
-                            
-                        />
+                        <div className='sm:w-auto w-1/2 flex justify-center '>
+                            <Image
+                                src={`${brand.imgUrl?.src}`}
+                                width={brand.imgUrl.width}
+                                height={brand.imgUrl.height}
+                            />
+                        </div>
+                        
                         <span className="text-gray lg:text-base text-sm text-center font-normal font-NotoSans leading-6">
                             {brand.date}
                         </span>
@@ -185,12 +187,12 @@ export const Home = ({ valutes }) => {
                 </div>
             </div>
 
-            <div className="flex mb-9 lg:gap-9 gap-3 lg:justify-between justify-start flex-wrap">
+            <div className="flex lg:mb-9 mb-3 lg:gap-9 sm:gap-3 gap-1 justify-between flex-wrap lg:grid-rows-3 grid-rows-2">
                 {brandData.slice(3).map((brand, i) => (
                     <div
                         onClick={() => handleBrandCardClick(brand)}
                         key={`brand-item-${i}`}
-                        className="lg:px-4 lg:py-6 px-2 py-3 flex flex-col justify-between items-center border border-gray-light rounded-2xl lg:max-w-[348px] lg:gap-20 gap-10 max-w-[154px] cursor-pointer"
+                        className="lg:px-4 lg:py-6 px-1 py-3 lg:mb-0 sm:mb-0 mb-3 flex flex-col justify-between items-center border border-gray-light rounded-2xl lg:gap-20 gap-10 xs:w-auto w-full lg:h-auto h-[250px] cursor-pointer hover:bg-gray-light"
                     >
                         <span className="text-gray lg:text-base text-sm  text-center font-normal lg:w-[320px] w-[154px] font-NotoSans leading-6  ">
                             {brand.name}
